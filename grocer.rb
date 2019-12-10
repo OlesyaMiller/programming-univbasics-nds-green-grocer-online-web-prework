@@ -1,4 +1,4 @@
-#require 'pry' 
+require 'pry' 
 def find_item_by_name_in_collection(name, collection)
   
   my_index = 0 
@@ -12,12 +12,13 @@ def find_item_by_name_in_collection(name, collection)
 end
 
 def consolidate_cart(cart)
-  #binding.pry 
+
   new_cart = []
   my_index = 0 
   
   while my_index < cart.length do 
     new_cart_item = find_item_by_name_in_collection(cart[my_index][:item], new_cart)
+    binding.pry
     if new_cart_item 
        new_cart_item[:count] += 1
     else
